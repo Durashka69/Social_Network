@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from .models import User, Post
-from .serializers import UserSerializer, PostSerializer
+from .models import User, Post, Like
+from .serializers import UserSerializer, PostSerializer, LikeSerializer
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -11,3 +11,8 @@ class UserViewSet(viewsets.ModelViewSet):
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+
+
+class LikeViewSet(viewsets.ModelViewSet):
+    queryset = Like.objects.all()
+    serializer_class = LikeSerializer
